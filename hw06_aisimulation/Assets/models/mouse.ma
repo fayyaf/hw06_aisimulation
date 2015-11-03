@@ -1,6 +1,6 @@
 //Maya ASCII 2016 scene
 //Name: mouse.ma
-//Last modified: Mon, Nov 02, 2015 05:33:14 PM
+//Last modified: Mon, Nov 02, 2015 05:35:25 PM
 //Codeset: 1252
 requires maya "2016";
 requires "stereoCamera" "10.0";

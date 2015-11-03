@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Mouse : MonoBehaviour {
 
+	public AudioSource mouseSound; // assign in Inspector
+
 	public Transform cat; // assign in inspector
 	Rigidbody rb;
 
@@ -36,6 +38,9 @@ public class Mouse : MonoBehaviour {
 				// if mouseRayHitInfo.collider.tag is exactly equal to the word "Cat"... (mouse sees cat!)
 				if (mouseRayHitInfo.collider.tag == "Cat")
 				{
+					// play alarm sound
+					mouseSound.Play();
+
 					// add force on rigidbody, along [-directionToCat.normalized * 1000f] (run away!)
 					rb.AddForce(-directionToCat.normalized * 1000f);
 				}

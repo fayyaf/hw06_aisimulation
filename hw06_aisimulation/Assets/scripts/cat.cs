@@ -3,12 +3,14 @@ using System.Collections;
 
 public class cat : MonoBehaviour
 {
+	public AudioSource catSound; // assign in Inspector
+	public AudioSource mournfulSound;
 	public Transform mouse; // assign in inspector
 	Rigidbody rb;
 
 	// Use this for initialization
 	void Start ()
-	{	
+	{
 		rb = GetComponent<Rigidbody>();
 	}
 	
@@ -35,11 +37,15 @@ public class cat : MonoBehaviour
 				//  if catRayHitInfo.collider.tag is exactly equal to the word "Mouse"... (Cat sees the mouse!)
 				if (catRayHitInfo.collider.tag == "Mouse")
 				{
+					// play alarm sound
+					catSound.Play();
+
 					// if catRayHitInfo.distance is less than or equal to 5...
 					if (catRayHitInfo.distance <= 1f)
 					{
 						// then destroy the mouse gameObject (we caught the mouse!)
 						Destroy (mouse.gameObject);
+						mournfulSound.Play ();
 					}
 					else 
 					{
