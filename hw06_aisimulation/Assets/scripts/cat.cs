@@ -37,9 +37,11 @@ public class cat : MonoBehaviour
 				//  if catRayHitInfo.collider.tag is exactly equal to the word "Mouse"... (Cat sees the mouse!)
 				if (catRayHitInfo.collider.tag == "Mouse")
 				{
-					// play alarm sound
-					catSound.Play();
-
+					if (catSound.isPlaying == false)
+					{
+						// play alarm sound
+						catSound.Play();
+					}
 					// if catRayHitInfo.distance is less than or equal to 5...
 					if (catRayHitInfo.distance <= 1f)
 					{
